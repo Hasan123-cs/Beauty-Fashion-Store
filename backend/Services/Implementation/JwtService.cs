@@ -21,7 +21,7 @@ namespace BeautyFashionStore.Services.Implementation
             _userManager = userManager;
         }
 
-        public async Task<string> CreateToken(ApplicationUser user)
+        public async Task<string> CreateToken(ApplicationUser user, bool rememberMe)
         {
             var roles = await _userManager.GetRolesAsync(user);
 
@@ -47,14 +47,17 @@ namespace BeautyFashionStore.Services.Implementation
             var credentials = new SigningCredentials(
                 key,
                 SecurityAlgorithms.HmacSha256);
+            var expiration = rememberMe
+            ? DateTime.UtcNow.AddDays(30)
+            : DateTime.UtcNow.AddMinutes(
+                Convert.ToDouble(_configuration["Jwt:DurationInMinutes"]));
 
             // Create token
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(
-                    Convert.ToDouble(_configuration["Jwt:DurationInMinutes"])),
+                expires: expiration,
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

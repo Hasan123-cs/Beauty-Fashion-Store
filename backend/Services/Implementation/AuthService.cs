@@ -106,7 +106,7 @@ namespace BeautyFashionStore.Services
                 };
             }
 
-            var token = await _jwtService.CreateToken(user);
+            var token = await _jwtService.CreateToken(user,dto.RememberMe);
 
             return new ApiResponse<string>
             {
