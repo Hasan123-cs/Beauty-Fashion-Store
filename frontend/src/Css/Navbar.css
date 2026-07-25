@@ -1,0 +1,97 @@
+.top-bar {
+  background: #bb6a80;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  position: relative;
+  background: white;
+}
+
+.logo a {
+  font-size: 40px;
+  text-decoration: none;
+  color: black;
+  letter-spacing: 8px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-size: 20px;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 25px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+  }
+
+  .logo a {
+    font-size: 28px;
+    letter-spacing: 5px;
+  }
+
+  .nav-icons {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background: white;
+
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 20px;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  .top-bar {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

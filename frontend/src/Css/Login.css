@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+}
+
+/* Login Background */
+.login-page {
+  min-height: 100vh;
+  background: url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1500&q=80")
+    center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Card */
+.login-card {
+  position: relative;
+  z-index: 2;
+  width: 550px;
+  background: #fff;
+  border-radius: 25px;
+  padding: 55px;
+}
+
+/* Header */
+.welcome {
+  text-align: center;
+  letter-spacing: 5px;
+  color: #a98a92;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.login-card h1 {
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 58px;
+  color: #1f1a17;
+  margin-bottom: 40px;
+}
+
+.login-card h1 span {
+  font-style: italic;
+}
+
+/* Form */
+label {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+input {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 0 18px;
+  font-size: 17px;
+  outline: none;
+  margin-bottom: 25px;
+}
+
+input:focus {
+  border-color: #bf6679;
+}
+
+/* Password */
+.password-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.password-header a {
+  text-decoration: none;
+  color: #bf6679;
+  font-size: 15px;
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-input button {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #888;
+  font-size: 22px;
+}
+
+/* Remember */
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.remember input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.remember span {
+  color: #777;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 14px;
+  background: #bf6679;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #ad5a6d;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e4dede;
+}
+
+.divider span {
+  padding: 0 18px;
+  color: #8f7a7a;
+  background: white;
+  font-size: 16px;
+}
+
+/* Social Buttons */
+.social-btn {
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  border-radius: 15px;
+  cursor: pointer;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  margin-bottom: 18px;
+}
+
+.google-btn {
+  background: white;
+  border: 1px solid #ddd;
+  color: #374151;
+}
+
+.google-btn svg {
+  font-size: 30px;
+}
+
+.facebook-btn {
+  background: #1877f2;
+  color: white;
+  border: none;
+}
+
+.facebook-btn svg {
+  font-size: 28px;
+}
+
+/* Signup */
+.signup-text {
+  text-align: center;
+  margin-top: 35px;
+  color: #8f7a7a;
+  font-size: 20px;
+}
+
+.signup-text a {
+  color: #c96b81;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ========================= */
+/* Tablet Responsive */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .login-card {
+    width: 90%;
+    max-width: 500px;
+    padding: 45px;
+  }
+
+  .login-card h1 {
+    font-size: 50px;
+  }
+}
+
+/* ========================= */
+/* Mobile Responsive */
+/* ========================= */
+
+@media (max-width: 600px) {
+  .login-page {
+    padding: 15px;
+    background-position: center;
+  }
+
+  .login-card {
+    width: 100%;
+    padding: 35px 25px;
+    border-radius: 20px;
+  }
+
+  .welcome {
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+
+  .login-card h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  input {
+    height: 52px;
+    font-size: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .password-input button {
+    top: 14px;
+    right: 15px;
+    font-size: 20px;
+  }
+
+  .password-header a {
+    font-size: 13px;
+  }
+
+  .remember {
+    gap: 8px;
+    margin-bottom: 25px;
+    font-size: 14px;
+  }
+
+  .remember input {
+    width: 18px;
+    height: 18px;
+  }
+
+  .login-btn {
+    height: 52px;
+    font-size: 17px;
+  }
+
+  .divider {
+    margin: 25px 0;
+  }
+
+  .divider span {
+    font-size: 14px;
+    padding: 0 12px;
+  }
+
+  .social-btn {
+    height: 52px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  .google-btn svg {
+    font-size: 25px;
+  }
+
+  .facebook-btn svg {
+    font-size: 24px;
+  }
+
+  .signup-text {
+    margin-top: 25px;
+    font-size: 15px;
+  }
+}
+
+/* ========================= */
+/* Small Phones */
+/* ========================= */
+
+@media (max-width: 400px) {
+  .login-card {
+    padding: 30px 18px;
+  }
+
+  .login-card h1 {
+    font-size: 35px;
+  }
+
+  .welcome {
+    letter-spacing: 2px;
+  }
+
+  input,
+  .login-btn,
+  .social-btn {
+    height: 48px;
+  }
+}

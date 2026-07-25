@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*  fonts  */
+/* CormorantGaramond */
+@font-face {
+  font-family: CormorantGaramond;
+  src: url("/public/Fonts/CormorantGaramond/CormorantGaramond-Medium.ttf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: CormorantGaramond;
+  src: url("/public/Fonts/CormorantGaramond/CormorantGaramond-SemiBold.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: CormorantGaramond;
+  src: url("/public/Fonts/CormorantGaramond/CormorantGaramond-Light.ttf");
+}
+/* ===CormorantGaramond=== */
+/* Inter */
+@font-face {
+  font-family: inter;
+  src: url(/public/Fonts/Inter/Inter_18pt-Medium.ttf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: inter;
+  src: url(/public/Fonts/Inter/Inter_18pt-SemiBold.ttf);
+  font-weight: 200;
+}
+@font-face {
+  font-family: inter;
+  src: url(/public/Fonts/Inter/Inter_18pt-Light.ttf);
+}
+/* === Inter === */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+  }
+
+  .logo a {
+    font-size: 28px;
+    letter-spacing: 5px;
+  }
+
+  .nav-icons {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background: white;
+
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 20px;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  .top-bar {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
