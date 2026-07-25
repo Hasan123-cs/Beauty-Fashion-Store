@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,7 +15,7 @@ export default function Login() {
   const [Password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  //handlers
+  //   handlers
   function handleRemeberMe() {
     setRememberMe(rememberMe == false ? true : false);
   }
@@ -28,8 +29,9 @@ export default function Login() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: emailAddress,
-          password: Password,
+          Email: emailAddress,
+          Password: Password,
+          RememberMe: rememberMe,
         }),
       });
 
@@ -49,6 +51,41 @@ export default function Login() {
       setError("Server error");
     }
   }
+
+  // Google login handler
+  async function handleGoogleSuccess(response) {
+    console.log(response);
+
+    const googleToken = response.credential;
+
+    try {
+      const res = await fetch("https://localhost:7066/api/auth/google-login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          token: googleToken,
+        }),
+      });
+
+      const data = await res.json();
+
+      console.log(data);
+
+      if (!res.ok) {
+        setError(data.message);
+        return;
+      }
+
+      localStorage.setItem("token", data.token);
+
+      navigate("/home");
+    } catch (error) {
+      setError("Google login failed");
+    }
+  }
+  // === handlers ===
   return (
     <div className="login-page">
       <div className="overlay"></div>
@@ -69,11 +106,9 @@ export default function Login() {
               setemailAddress(e.target.value);
             }}
           />
-
           <div className="password-header">
             <label>Password</label>
           </div>
-
           <div className="password-input">
             <input
               type={showPassword ? "text" : "password"}
@@ -90,28 +125,22 @@ export default function Login() {
               {showPassword ? <FiEyeOff /> : <FiEye />}
             </button>
           </div>
-
           <div className="remember">
             <input type="checkbox" onClick={handleRemeberMe} />
             <span>Remember me for 30 days</span>
           </div>
-
           <button className="login-btn" type="submit">
             Sign In →
           </button>
           <div className="divider">
             <span>or continue with</span>
           </div>
-
-          <button className="social-btn google-btn">
-            <FcGoogle />
-            Continue with Google
-          </button>
-
-          <button className="social-btn facebook-btn">
-            <FaFacebook />
-            Continue with Facebook
-          </button>
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={() => {
+              console.log("Google Login Failed");
+            }}
+          />
 
           <p className="signup-text">
             Don't have an account? <Link to="/register">Create one free</Link>
