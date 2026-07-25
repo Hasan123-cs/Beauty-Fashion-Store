@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "BeautyFashionStore.Controllers.AccountController",
+    "Method": "Login",
+    "RelativePath": "api/auth/Account/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BeautyFashionStore.DTO.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BeautyFashionStore.Controllers.AccountController",
+    "Method": "Register",
+    "RelativePath": "api/auth/Account/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "BeautyFashionStore.DTOs.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
