@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\React\\Beauty-Fashion-Store\\backend\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7D9430B4-39BB-6039-BF44-86F5D18E1BB1}|BeautyFashionStore\\BeautyFashionStore.csproj|c:\\react\\beauty-fashion-store\\backend\\beautyfashionstore\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{7D9430B4-39BB-6039-BF44-86F5D18E1BB1}|BeautyFashionStore\\BeautyFashionStore.csproj|solutionrelative:beautyfashionstore\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,6 +39,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\React\\Beauty-Fashion-Store\\backend\\BeautyFashionStore\\.gitignore",
+              "RelativeDocumentMoniker": "BeautyFashionStore\\.gitignore",
+              "ToolTip": "C:\\React\\Beauty-Fashion-Store\\backend\\BeautyFashionStore\\.gitignore",
+              "RelativeToolTip": "BeautyFashionStore\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-07-25T11:37:39.293Z",
+              "EditorCaption": ""
             }
           ]
         },
