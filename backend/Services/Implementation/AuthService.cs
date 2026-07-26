@@ -94,7 +94,7 @@ namespace BeautyFashionStore.Services
             var result = await _signInManager.CheckPasswordSignInAsync(
                 user,
                 dto.Password,
-                
+               
                 false);
 
             if (!result.Succeeded)

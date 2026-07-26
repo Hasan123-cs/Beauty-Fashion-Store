@@ -15,6 +15,8 @@ export default function Login() {
   const [Password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  var showsignInBtn =
+    Password.length > 0 && emailAddress.length > 0 ? true : false;
   //   handlers
   function handleRemeberMe() {
     setRememberMe(rememberMe == false ? true : false);
@@ -133,7 +135,19 @@ export default function Login() {
             <span>Remember me for 30 days</span>
           </div>
 
-          <button className="login-btn" type="submit">
+          <button
+            disabled={!showsignInBtn}
+            style={
+              !showsignInBtn
+                ? {
+                    backgroundColor: "lightgray",
+                    cursor: "not-allowed",
+                  }
+                : {}
+            }
+            className="login-btn"
+            type="submit"
+          >
             Sign In →
           </button>
 
