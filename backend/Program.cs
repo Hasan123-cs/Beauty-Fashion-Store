@@ -71,6 +71,30 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
+//seding 
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager =
+        scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+    string[] roles =
+    {
+        "Customer",
+        "Admin",
+        "Employee"
+    };
+
+
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+        {
+            await roleManager.CreateAsync(
+                new IdentityRole(role)
+            );
+        }
+    }
+}
 //Cross-Origin Resource Sharing 
 app.UseCors("ReactApp");
 

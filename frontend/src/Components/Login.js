@@ -36,9 +36,10 @@ export default function Login() {
       });
 
       const data = await response.json();
-      console.log(data);
       if (!response.ok) {
         setError(data.message);
+        console.log(error);
+
         return;
       }
 
@@ -125,13 +126,17 @@ export default function Login() {
               {showPassword ? <FiEyeOff /> : <FiEye />}
             </button>
           </div>
+          {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
+
           <div className="remember">
             <input type="checkbox" onClick={handleRemeberMe} />
             <span>Remember me for 30 days</span>
           </div>
+
           <button className="login-btn" type="submit">
             Sign In →
           </button>
+
           <div className="divider">
             <span>or continue with</span>
           </div>
@@ -145,7 +150,6 @@ export default function Login() {
           <p className="signup-text">
             Don't have an account? <Link to="/register">Create one free</Link>
           </p>
-          {error && <p>{error}</p>}
         </form>
       </div>
     </div>
