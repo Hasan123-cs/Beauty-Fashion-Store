@@ -62,6 +62,8 @@ export default function RegisterPage() {
       }
     } catch (error) {
       console.log(error);
+      // todo redirect to status code page
+
       alert("Server error");
     }
   };
