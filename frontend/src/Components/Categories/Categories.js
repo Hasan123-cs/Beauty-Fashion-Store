@@ -1,31 +1,30 @@
 import { Container, Typography, Grid } from "@mui/material";
 
 import CategoryCard from "./CategoryCard";
+import { useEffect, useState } from "react";
 
 export default function Categories() {
-  // Temporary data
-  const categories = [
-    {
-      id: 1,
-      name: "Dresses",
-      image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c",
-    },
-    {
-      id: 2,
-      name: "Jackets",
-      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
-    },
-    {
-      id: 3,
-      name: "Knitwear",
-      image: "https://images.unsplash.com/photo-1483985988355-763728e1935b",
-    },
-    {
-      id: 4,
-      name: "Accessories",
-      image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f",
-    },
-  ];
+  // states
+  const [categories, setCategories] = useState([]);
+  // simulate the loading slider (feature)
+  const [loading, setLoading] = useState(true);
+  //  handlers
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch("https://localhost:7066/api/home");
+        console.log("Response:", response);
+        const data = await response.json();
+        console.log(data);
+        setCategories(data);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCategories();
+  }, []);
 
   return (
     <Container maxWidth="xl" sx={{ py: 10 }}>

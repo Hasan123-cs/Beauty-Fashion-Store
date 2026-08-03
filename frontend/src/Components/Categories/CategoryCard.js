@@ -14,6 +14,8 @@ export default function CategoryCard({ category }) {
         borderRadius: 3,
         overflow: "hidden",
         position: "relative",
+        height: 420,
+        width: "100%",
       }}
     >
       <CardActionArea>
@@ -25,7 +27,9 @@ export default function CategoryCard({ category }) {
           <CardMedia
             component="img"
             height="320"
-            image={category.image}
+            image={category.images}
+            maxWidth="200px"
+            maxHeight="400px"
             alt={category.name}
             sx={{
               transition: "transform 0.5s ease",

@@ -20,7 +20,7 @@ export default function Navbar() {
         Free shipping on orders over £150 · New collection available now
       </div>
 
-      <nav className="navbar">
+      <nav className="navbar" style={{ backgroundColor: "#bf667913" }}>
         <div className="logo">
           <Link to="/">BEAUTY</Link>
         </div>

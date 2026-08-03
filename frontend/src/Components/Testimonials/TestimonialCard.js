@@ -1,4 +1,11 @@
-import { Card, CardContent, Avatar, Typography, Box } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Avatar,
+  Typography,
+  Box,
+  Rating,
+} from "@mui/material";
 
 export default function TestimonialCard({ testimonial }) {
   return (
@@ -22,6 +29,15 @@ export default function TestimonialCard({ testimonial }) {
           }}
         >
           "{testimonial.message}"
+        </Typography>
+        {/* Rating Stars */}
+        <Typography
+          sx={{
+            mb: 3,
+            fontSize: 20,
+          }}
+        >
+          {"⭐".repeat(testimonial.rating)}
         </Typography>
 
         <Box

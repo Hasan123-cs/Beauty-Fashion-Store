@@ -12,6 +12,7 @@ import Home from "./Components/Home";
 // import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Register from "./Components/Register";
+
 const theme = createTheme({
   palette: {
     primary: {

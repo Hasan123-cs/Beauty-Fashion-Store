@@ -1,36 +1,28 @@
 import { Container, Grid, Typography, Box } from "@mui/material";
 
 import TestimonialCard from "./TestimonialCard";
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    role: "Fashion Customer",
-    message:
-      "Amazing quality and beautiful designs. The shopping experience was smooth and enjoyable.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-
-  {
-    id: 2,
-    name: "Michael Brown",
-    role: "Regular Customer",
-    message:
-      "Fast delivery, great customer service, and products exactly like the pictures.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-
-  {
-    id: 3,
-    name: "Emma Wilson",
-    role: "Online Shopper",
-    message: "I love the collection. The quality exceeded my expectations.",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
-  },
-];
+import { useEffect, useState } from "react";
 
 export default function Testimonials() {
+  // states
+  const [testimonials, setTestimonials] = useState([]);
+  //handlers
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await fetch(
+          "https://localhost:7066/api/home/testimonials",
+        );
+        console.log("Response:", response);
+        const data = await response.json();
+        console.log(data);
+        setTestimonials(data);
+      } catch (error) {
+        console.error("Error fetching testimonials:", error);
+      }
+    };
+    fetchTestimonials();
+  }, []);
   return (
     <Container maxWidth="lg">
       <Box

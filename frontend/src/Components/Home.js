@@ -13,11 +13,14 @@ export default function Home() {
 
       <Categories />
 
-      <ProductSection title="Editor's Picks" />
+      <ProductSection
+        title="Editor's Picks"
+        endpoint="home/featured-products"
+      />
 
       <SaleBanner />
 
-      <ProductSection title="New Arrivals" />
+      <ProductSection title="New Arrivals" endpoint="home/new-arrivals" />
 
       <AboutSection />
 
