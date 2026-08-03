@@ -23,6 +23,8 @@ namespace BeautyFashionStore.Models
         public int BrandId { get; set; }
 
         public Brand Brand { get; set; }
+        
+        public bool IsFeatured { get; set; } = false;
 
         public ICollection<ProductImage> Images { get; set; } = new List<ProductImage>();
 

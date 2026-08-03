@@ -69,6 +69,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     ));
 
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICategory, BeautyFashionStore.Services.Implementation.CategoryService>();
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 //seding 

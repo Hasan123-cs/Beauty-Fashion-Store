@@ -227,6 +227,10 @@ namespace BeautyFashionStore.Migrations
                     b.Property<int?>("ParentCategoryId")
                         .HasColumnType("integer");
 
+                    b.Property<string>("images")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ParentCategoryId");
@@ -375,6 +379,9 @@ namespace BeautyFashionStore.Migrations
                         .HasColumnType("text");
 
                     b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("IsFeatured")
                         .HasColumnType("boolean");
 
                     b.Property<string>("Name")

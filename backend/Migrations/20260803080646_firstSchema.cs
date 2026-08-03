@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BeautyFashionStore.Migrations
 {
     /// <inheritdoc />
-    public partial class initialSchema : Migration
+    public partial class firstSchema : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -77,6 +77,7 @@ namespace BeautyFashionStore.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: true),
+                    images = table.Column<string>(type: "text", nullable: false),
                     ParentCategoryId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
@@ -278,7 +279,8 @@ namespace BeautyFashionStore.Migrations
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CategoryId = table.Column<int>(type: "integer", nullable: false),
-                    BrandId = table.Column<int>(type: "integer", nullable: false)
+                    BrandId = table.Column<int>(type: "integer", nullable: false),
+                    IsFeatured = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {
